@@ -21,12 +21,11 @@
                     </tr>
                 </thead>
                 <tbody id="product-list">
-                    
                 </tbody>
             </table>
         </div>
         <div class=" col-3">
-            <div class="card shadow-sm">
+            <div class="card shadow-sm mb-3">
                 <div class="card-header">
                     <h5 class="mb-0">Tạo sản phẩm</h5>
                 </div>
@@ -35,56 +34,58 @@
                         <div class="form-group mt-2">
                             <label for="name" class="form-label">Tên sản phẩm</label>
                             <input type="text" id="name" class="form-control" />
-                            <div class="error-message text-danger"></div>
+                            <div class="error-message text-danger" style="font-style : italic"></div>
                         </div>
 
                         <div class="form-group mt-2">
                             <label for="price" class="form-label">Giá sản phẩm</label>
-                            <input type="text" id="price" class="form-control" />
-                            <div class="error-message text-danger"></div>
+                            <input type="number" id="price" class="form-control" />
+                            <div class="error-message text-danger" style="font-style : italic"></div>
                         </div>
 
                         <div class="form-group mt-2">
                             <label for="quantity" class="form-label">Số lượng</label>
-                            <input type="text" id="quantity" class="form-control" />
-                            <div class="error-message text-danger"></div>
+                            <input type="number" id="quantity" class="form-control" />
+                            <div class="error-message text-danger" style="font-style : italic"></div>
                         </div>
 
                         <div class="form-group mt-2">
                             <label for="description" class="form-label">Mô tả</label>
-                            <input type="text" id="description" class="form-control" />
-                            <div class="error-message text-danger"></div>
+                            <textarea id="description" class="form-control" rows="3" maxlength="500" required></textarea>
+                            <div class="error-message text-danger" style="font-style : italic"></div>
                         </div>
 
                         <div class="form-group mt-2">
-                            <label for="name" class="form-label">Thương hiệu</label>
+                            <label for="brandid" class="form-label">Thương hiệu</label>
                             <select id="brandid" class="form-select" aria-label="Default select example">
-                                <option selected>Chọn thương hiệu</option>
+                                <option value="" selected>Chọn thương hiệu</option>
                                 <option value="1">Apple</option>
                                 <option value="2">Samsung</option>
                                 <option value="3">MSI</option>
                             </select>
-                            <div class="error-message text-danger"></div>
+                            <div class="error-message text-danger" style="font-style : italic"></div>
                         </div>
 
 
                         <div class="form-group mt-2">
-                            <label for="name" class="form-label">Loại</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Chọn loại</option>
+                            <label for="categoryid" class="form-label">Loại</label>
+                            <select id="categoryid" class="form-select" aria-label="Default select example">
+                                <option value="" selected>Chọn loại</option>
                                 <option value="3">PC</option>
                                 <option value="4">Smart Phone</option>
                                 <option value="5">Laptop</option>
                             </select>
-                            <div class="error-message text-danger"></div>
+                            <div class="error-message text-danger" style="font-style : italic"></div>
                         </div>
 
                         <div class="form-group mt-2">
                             <label for="imageFile" class="form-label">Ảnh</label>
                             <input class="form-control" type="file" id="imageFile" accept="image/*">
+                            <div  class="error-message text-danger" style="font-style : italic"></div>
                         </div>
 
-                        <button id="create" type="button" onclick="" class="btn btn-success mt-3">Tạo sản phẩm</button>
+                        <button id="create" type="button" class="btn btn-success mt-3">Tạo sản phẩm</button>
+                        <button id="test" type="button" class="btn btn-success mt-3">Test</button>
                     </form>
                 </div>
             </div>

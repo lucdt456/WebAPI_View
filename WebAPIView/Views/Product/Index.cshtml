@@ -1,0 +1,114 @@
+@{
+    ViewData["Title"] = "Product";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            <h3>List sản phẩm</h3>
+            <table class="table table-light text-center mt-4 align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th width="">#</th>
+                        <th width="">Tên</th>
+                        <th width="">Giá</th>
+                        <th width="">Số lượng</th>
+                        <th width="">Mô tả</th>
+                        <th width="">Thương hiệu</th>
+                        <th width="">Loại</th>
+                        <th width="">Ảnh</th>
+                        <th width=""></th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    <tr>
+                        <td>1</td>
+                        <td>iphone 8</td>
+                        <td>3500</td>
+                        <td>15</td>
+                        <td>điện thoại thông minh apple</td>
+                        <td>apple</td>
+                        <td>smart phone</td>
+                        <td>
+                            <img src="~/imgs/products/iphone8.png" width="50px" />
+                        </td>
+                        <td>
+                            <button  class="btn btn-warning me-2">
+                                <i class="bi bi-pencil-square"></i>
+                            </button>
+                            <button class="btn btn-danger">
+                                <i class="bi bi-x-circle text-black"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class=" col-3">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h5 class="mb-0">Tạo sản phẩm</h5>
+                </div>
+                <div class="card-body">
+                    <form class="form">
+                        <div class="form-group mt-2">
+                            <label for="name" class="form-label">Tên sản phẩm</label>
+                            <input type="text" id="name" class="form-control" />
+                            <div class="error-message text-danger"></div>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="price" class="form-label">Giá sản phẩm</label>
+                            <input type="text" id="price" class="form-control" />
+                            <div class="error-message text-danger"></div>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="quantity" class="form-label">Số lượng</label>
+                            <input type="text" id="quantity" class="form-control" />
+                            <div class="error-message text-danger"></div>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="description" class="form-label">Mô tả</label>
+                            <input type="text" id="description" class="form-control" />
+                            <div class="error-message text-danger"></div>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="name" class="form-label">Thương hiệu</label>
+                            <select id="brandid" class="form-select" aria-label="Default select example">
+                                <option selected>Chọn thương hiệu</option>
+                                <option value="1">Apple</option>
+                                <option value="2">Samsung</option>
+                                <option value="3">MSI</option>
+                            </select>
+                            <div class="error-message text-danger"></div>
+                        </div>
+
+
+                        <div class="form-group mt-2">
+                            <label for="name" class="form-label">Loại</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Chọn loại</option>
+                                <option value="3">PC</option>
+                                <option value="4">Smart Phone</option>
+                                <option value="5">Laptop</option>
+                            </select>
+                            <div class="error-message text-danger"></div>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="imageFile" class="form-label">Ảnh</label>
+                            <input class="form-control" type="file" id="imageFile" accept="image/*">
+                        </div>
+
+                        <button id="create" type="button" onclick="" class="btn btn-success mt-3">Tạo sản phẩm</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="~/js/apiProduct.js"></script>

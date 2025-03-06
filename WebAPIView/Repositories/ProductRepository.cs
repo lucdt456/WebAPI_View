@@ -61,13 +61,14 @@ namespace WebAPIView.Repositories
 
 			if (product != null)
 			{
-				product.Name = productUpdate.Name;
-				product.Price = productUpdate.Price;
-				product.Image = productUpdate.Image;
-				product.Quantity = productUpdate.Quantity;
-				product.BrandId = productUpdate.BrandId;
-				product.CategoryId = productUpdate.CategoryId;
-				product.Description = productUpdate.Description;
+				product.Name = productUpdate.Name ?? product.Name;
+				product.Price = productUpdate.Price ?? product.Price;
+				product.Image = productUpdate.Image ?? product.Image;
+				product.Quantity = productUpdate.Quantity ?? product.Quantity;
+				product.BrandId = productUpdate.BrandId ?? product.BrandId;
+				product.CategoryId = productUpdate.CategoryId ?? product.CategoryId;
+				product.Description = productUpdate.Description ?? product.Description;
+
 
 				_context.Products.Update(product);
 				await _context.SaveChangesAsync();

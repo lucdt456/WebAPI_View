@@ -20,7 +20,7 @@ namespace WebAPIView.Controllers.API
 		}
 
 		[HttpGet]
-		public async Task<IEnumerable<Product>> GetProducts()
+		public async Task<IEnumerable<ProductVM>> GetProducts()
 		{
 			return await _productService.GetProducts();
 		}

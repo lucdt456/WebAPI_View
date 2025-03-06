@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebAPIView.Data;
 using WebAPIView.Models.DTOModel;
+using WebAPIView.Models.ViewModels;
 using WebAPIView.Repositories.Interfaces;
 
 namespace WebAPIView.Repositories
@@ -12,9 +13,21 @@ namespace WebAPIView.Repositories
 		{
 			_context = context;
 		}
-		public async Task<IEnumerable<Product>> GetProducts()
+		public async Task<IEnumerable<ProductVM>> GetProducts()
 		{
-			return await _context.Products.ToListAsync();
+			List<Product> products = await _context.Products.Include(p => p.Brand).Include(p => p.Category).ToListAsync();
+			var productVMs = products.Select(p => new ProductVM
+			{
+				Id = p.Id,
+				Name = p.Name,
+				Price = p.Price,
+				Image = p.Image,
+				Quantity = p.Quantity,
+				Brand = p.Brand.Name,
+				Category = p.Category.Name,
+				Description = p.Description
+			});
+			return productVMs;
 		}
 
 		public async Task<Product?> GetProductById(int id)

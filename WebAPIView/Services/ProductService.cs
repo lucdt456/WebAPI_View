@@ -14,7 +14,7 @@ namespace WebAPIView.Services
 			_productRepository = productRepository;
 		}
 
-		public async Task<IEnumerable<Product>> GetProducts()
+		public async Task<IEnumerable<ProductVM>> GetProducts()
 		{
 			return await _productRepository.GetProducts();
 		}

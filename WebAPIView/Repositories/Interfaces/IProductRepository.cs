@@ -1,10 +1,11 @@
 using WebAPIView.Data;
 using WebAPIView.Models.DTOModel;
+using WebAPIView.Models.ViewModels;
 namespace WebAPIView.Repositories.Interfaces
 {
 	public interface IProductRepository
 	{
-		Task<IEnumerable<Product>> GetProducts();
+		Task<IEnumerable<ProductVM>> GetProducts();
 		Task<Product?> GetProductById(int id);
 		Task<Product> AddProduct(ProductDTO NewProduct);
 		Task<Product?> UpdateProduct(int id, ProductDTO productUpdate);

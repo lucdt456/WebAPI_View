@@ -6,7 +6,7 @@ namespace WebAPIView.Services.Interfaces
 {
 	public interface IProductService
 	{
-		Task<IEnumerable<Product>> GetProducts();
+		Task<IEnumerable<ProductVM>> GetProducts();
 		Task<ProductVM?> GetProductById(int id);
 		Task<Product> AddProduct(ProductDTO newProduct);
 		Task<Product?> UpdateProduct(int id, ProductDTO productUpdate);

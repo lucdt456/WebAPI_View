@@ -22,6 +22,8 @@ namespace WebAPIView.Services
 		public async Task<ProductVM?> GetProductById(int id)
 		{
 			var getProductById = await _productRepository.GetProductById(id);
+			var brandName = await _productRepository.GetBrandName((int)getProductById.BrandId);
+			var categoryName = await _productRepository.GetCategoryName((int)getProductById.CategoryId);
 			if (getProductById != null)
 			{
 				var productVM = new ProductVM
@@ -31,8 +33,8 @@ namespace WebAPIView.Services
 					Price = getProductById.Price,
 					Image = getProductById.Image,
 					Quantity = getProductById.Quantity,
-					Brand = await _productRepository.GetBrandName((int)getProductById.BrandId),
-					Category = await _productRepository.GetCategoryName((int)getProductById.CategoryId),
+					Brand = brandName,
+					Category = categoryName,
 					Description = getProductById.Description
 				};
 				return productVM;

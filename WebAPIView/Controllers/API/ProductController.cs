@@ -28,8 +28,8 @@ namespace WebAPIView.Controllers.API
 		[HttpGet("{id}")]
 		public async Task<IActionResult> GetProduct(int id)
 		{
-			var product = await _productService.GetProductById(id);
-			if (product != null) return Ok(product);
+			var productVM = await _productService.GetProductById(id);
+			if (productVM != null) return Ok(productVM);
 			else return NotFound();
 		}
 

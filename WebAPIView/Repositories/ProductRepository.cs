@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebAPIView.Data;
 using WebAPIView.Models.DTOModel;
-using WebAPIView.Models.ViewModels;
 using WebAPIView.Repositories.Interfaces;
 
 namespace WebAPIView.Repositories
